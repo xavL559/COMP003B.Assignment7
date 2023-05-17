@@ -1,0 +1,30 @@
+﻿@model COMP003B.Assignment7.Models.AlbumViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AlbumViewModel</h4>
+    <hr />
+    <dl class="row">
+    </dl>
+</div>
+
+<div class="col-md-4">
+    <h4>Artist</h4>
+    <ul>
+        @foreach (ArtistViewModel artistViewModel in ViewBag.Artist)
+        {
+            <li>@artistViewModel.Artist</li>
+        }
+    </ul>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AlbumTitle">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
