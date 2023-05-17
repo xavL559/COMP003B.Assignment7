@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Artist and Album</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -14,6 +14,7 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ArtistId)
                 @Html.DisplayNameFor(model => model.AlbumId)
             </th>
             <th></th>
@@ -23,6 +24,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ArtistId)
                 @Html.DisplayFor(modelItem => item.AlbumId)
             </td>
             <td>

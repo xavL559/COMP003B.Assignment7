@@ -43,8 +43,8 @@ namespace COMP003B.Assignment7.Controllers
             }
 
             var artist = from s in _context.Artist
-                           join e in _context.ArtistAlbum on s.Artist equals e.Artist
-                           join c in _context.Album on e.Artist equals c.AlbumTitle
+                           join e in _context.ArtistAlbum on s.Artist equals e.ArtistId
+                         join c in _context.Album on e.ArtistId equals c.AlbumTitle
                            where c.AlbumTitle == id
                            select s;
 
